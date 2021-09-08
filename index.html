@@ -10,15 +10,73 @@
     crossorigin="anonymous"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
+    <div class="row purple-bg white-text">
+      <div class="container column-full">
+        <h2 class="site-header-style">Code Journal</h2>
+      </div>
+    </div>
   </header>
-  <main>
-  </main>
+  <div class="container">
+    <main>
+      <div data-view="entry-form">
+        <form>
+          <div class="row">
+            <div class="column-full">
+              <h1>New Entry</h1>
+            </div>
+            <div class="column-full column-half">
+              <img src="images/placeholder-image-square.jpg" alt="new photo" class="border-radius-4">
+            </div>
+            <div class="column-full column-half">
+              <label>
+                <h3>Title</h3>
+                <input
+                required
+                type="text"
+                name="title"
+                id="image-title"
+                class="border-radius-4">
+              </label>
+              <label>
+                <h3>Photo URL</h3>
+                <input
+                required
+                type="text"
+                name="url"
+                id="image-url"
+                class="border-radius-4">
+              </label>
+            </div>
+            <div class="column-full">
+              <label>
+                <h3>Notes</h3>
+                <textarea
+                required
+                name="notes"
+                id="image-notes"
+                class="border-radius-4"></textarea>
+              </label>
+            </div>
+            <div class="column-full align-right">
+              <button type="submit" class="purple-bg white-text border-radius-4">SAVE</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
