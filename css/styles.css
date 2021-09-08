@@ -28,6 +28,7 @@ textarea {
   margin-bottom: 1rem;
   padding: 0.5rem;
   border: solid 1px #b6b6b6;
+  outline-color: #562b81;
 }
 
 textarea {
