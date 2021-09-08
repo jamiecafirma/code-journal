@@ -30,7 +30,7 @@
   </header>
   <div class="container">
     <main>
-      <div data-view="entry-form">
+      <div data-view="entry-form" class="hidden">
         <form id="diary-entry-form">
           <div class="row">
             <div class="column-full">
@@ -69,15 +69,53 @@
                 class="border-radius-4"></textarea>
               </label>
             </div>
-            <div class="column-full align-right">
+            <div class="column-full justify-right">
               <button type="submit" class="purple-bg white-text border-radius-4">SAVE</button>
             </div>
           </div>
         </form>
       </div>
       <div data-view="entries">
+        <div class="row entries-header-mg">
+          <div class="column-half entries-header-item align-center">
+            <h1 class="no-margin">Entries</h1>
+          </div>
+          <div class="column-half entries-header-item align-center justify-right">
+            <a href="#" class="purple-bg white-text border-radius-4">NEW</a>
+          </div>
+        </div>
         <ul>
-
+          <li class="row entry-margin">
+            <div class="column-half">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Un_bar_aux_Folies-Berg%C3%A8re_d%27E._Manet_%28Fondation_Vuitton%2C_Paris%29_%2833539037428%29.jpg" alt="dummy entry 1" class="border-radius-4">
+            </div>
+            <div class="column-half">
+              <h2 class="image-title-style">A Bar at the Folies-Bergère (detail), Édouard Manet, 1882</h2>
+              <p>French painter Édouard Manet presented A Bar at the Folies-Bergère at the
+              1882 Paris Salon exhibition just one year before his death. The painting is
+              the culmination of his interest in scenes of urban leisure and spectacle, a
+              subject that he had developed in dialogue with Impressionism over the previous
+              decade. On loan from the Courtauld Institute of Art Gallery in London, the painting
+              is a masterpiece that has perplexed and inspired artists and scholars since
+              it was painted over 100 years ago.
+              </p>
+            </div>
+          </li>
+          <li class="row entry-margin">
+            <div class="column-half">
+              <img src="https://wp.en.aleteia.org/wp-content/uploads/sites/2/2017/05/web3-raphaels-school-of-athens-fresco-apostolic-palace-vatican-city-raphael-pd.jpg?quality=100&strip=all" alt="dummy entry 2" class="border-radius-4">
+            </div>
+            <div class="column-half">
+              <h2 class="image-title-style">Raphael, School of Athens, 1509-1511, fresco</h2>
+              <p>The most famous philosophers of ancient times move within an imposing
+              Renaissance architecture which is inspired by Bramante's project for the
+              renewal of the early Christian basilica of St Peter. Some of these are easily
+              recognizable. In the centre Plato points upwards with a finger and holds his
+              book Timeus in his hand, flanked by Aristotle with Ethics; Pythagoras is shown
+              in the foreground intent on explaining the diatesseron.
+              </p>
+            </div>
+          </li>
         </ul>
       </div>
     </main>
