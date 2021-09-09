@@ -80,3 +80,22 @@ function loadJournalEntries(event) {
 }
 
 document.addEventListener('DOMContentLoaded', loadJournalEntries);
+
+var $entriesLink = document.querySelector('#view-entries-link');
+var $entryFormLink = document.querySelector('#entry-form-link');
+var $views = document.querySelectorAll('.view');
+
+function changeView(event) {
+  var $dataView = event.target.getAttribute('data-view');
+
+  for (var v = 0; v < $views.length; v++) {
+    if ($views[v].getAttribute('data-view') === $dataView) {
+      $views[v].className = 'view';
+    } else {
+      $views[v].className = 'view hidden';
+    }
+  }
+}
+
+$entriesLink.addEventListener('click', changeView);
+$entryFormLink.addEventListener('click', changeView);

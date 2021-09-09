@@ -24,13 +24,16 @@
   <header>
     <div class="row purple-bg white-text">
       <div class="container column-full">
-        <h2 class="site-header-style">Code Journal</h2>
+        <h2 class="site-header-style nav-item">Code Journal</h2>
+        <nav class="nav-item">
+          <a href="#" class="white-text" id="view-entries-link" data-view="entries">Entries</a>
+        </nav>
       </div>
     </div>
   </header>
   <div class="container">
     <main>
-      <div data-view="entry-form" class="hidden">
+      <div data-view="entry-form" class="view hidden">
         <form id="diary-entry-form">
           <div class="row">
             <div class="column-full">
@@ -75,13 +78,13 @@
           </div>
         </form>
       </div>
-      <div data-view="entries">
+      <div data-view="entries" class="view">
         <div class="row entries-header-mg">
           <div class="column-half entries-header-item align-center">
             <h1 class="no-margin">Entries</h1>
           </div>
           <div class="column-half entries-header-item align-center justify-right">
-            <a href="#" class="purple-bg white-text border-radius-4">NEW</a>
+            <a href="#" class="purple-bg white-text border-radius-4" id="entry-form-link" data-view="entry-form">NEW</a>
           </div>
         </div>
         <ul id="entry-list">
