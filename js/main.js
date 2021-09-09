@@ -135,6 +135,8 @@ function editEntry(event) {
     return;
   }
   changeView('entry-form');
+  var $editedEntry = event.target.closest('li');
+  data.editing = $editedEntry;
 }
 
 $entryList.addEventListener('click', editEntry);
