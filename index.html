@@ -24,13 +24,16 @@
   <header>
     <div class="row purple-bg white-text">
       <div class="container column-full">
-        <h2 class="site-header-style">Code Journal</h2>
+        <h2 class="site-header-style nav-item">Code Journal</h2>
+        <nav class="nav-item">
+          <a href="#" class="white-text" id="view-entries-link" data-view="entries">Entries</a>
+        </nav>
       </div>
     </div>
   </header>
   <div class="container">
     <main>
-      <div data-view="entry-form">
+      <div data-view="entry-form" class="view hidden" id="form-view">
         <form id="diary-entry-form">
           <div class="row">
             <div class="column-full">
@@ -69,11 +72,24 @@
                 class="border-radius-4"></textarea>
               </label>
             </div>
-            <div class="column-full align-right">
+            <div class="column-full justify-right">
               <button type="submit" class="purple-bg white-text border-radius-4">SAVE</button>
             </div>
           </div>
         </form>
+      </div>
+      <div data-view="entries" class="view" id="entries-view">
+        <div class="row entries-header-mg">
+          <div class="column-half entries-header-item align-center">
+            <h1 class="no-margin">Entries</h1>
+          </div>
+          <div class="column-half entries-header-item align-center justify-right">
+            <a href="#" class="purple-bg white-text border-radius-4" id="entry-form-link" data-view="entry-form">NEW</a>
+          </div>
+        </div>
+        <p id="no-entries" class="text-center margin-3rem">No entries have been recorded</p>
+        <ul id="entry-list">
+        </ul>
       </div>
     </main>
   </div>
