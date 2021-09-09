@@ -10,6 +10,19 @@ function updateImage(event) {
 
 $photoUrl.addEventListener('input', updateImage);
 
+/* <li class="row entry-margin">
+  <div class="column-half">
+    <img src="" alt="dummy entry 1" class="border-radius-4">
+  </div>
+  <div class="column-half">
+  <div class="row font-26">
+    <h2 class="image-title-style column-7-8"></h2>
+    <i class="fas fa-pen column-8 purple-color"></i>
+  </div>
+    <p></p>
+  </div>
+</li> */
+
 function createEntry(entry) {
   var $journalEntry = document.createElement('li');
   $journalEntry.className = 'row entry-margin';
@@ -28,10 +41,18 @@ function createEntry(entry) {
   $entryText.className = 'column-half';
   $journalEntry.appendChild($entryText);
 
+  var $titleContainer = document.createElement('div');
+  $titleContainer.className = 'row font-26';
+  $entryText.appendChild($titleContainer);
+
   var $entryTitle = document.createElement('h2');
-  $entryTitle.className = 'image-title-style';
+  $entryTitle.className = 'image-title-style column-7-8';
   $entryTitle.textContent = entry.title;
-  $entryText.appendChild($entryTitle);
+  $titleContainer.appendChild($entryTitle);
+
+  var $editIcon = document.createElement('i');
+  $editIcon.className = 'fas fa-pen column-8 purple-color';
+  $titleContainer.appendChild($editIcon);
 
   var $entryNotes = document.createElement('p');
   $entryNotes.textContent = entry.notes;
@@ -86,16 +107,6 @@ function addNewEntry(event) {
 }
 
 $diaryEntryForm.addEventListener('submit', addNewEntry);
-
-/* <li class="row entry-margin">
-  <div class="column-half">
-    <img src="" alt="dummy entry 1" class="border-radius-4">
-  </div>
-  <div class="column-half">
-    <h2 class="image-title-style"></h2>
-    <p></p>
-  </div>
-</li> */
 
 function loadJournalEntries(event) {
   $entryList = document.querySelector('#entry-list');
