@@ -137,6 +137,16 @@ function editEntry(event) {
   changeView('entry-form');
   var $editedEntry = event.target.closest('li');
   data.editing = $editedEntry;
+
+  var $entryID = parseInt(data.editing.getAttribute('data-entry-id'));
+
+  for (var i = 0; i < data.entries.length; i++) {
+    if ($entryID === data.entries[i].entryId) {
+      $diaryEntryForm.elements.title.value = data.entries[i].title;
+      $diaryEntryForm.elements.url.value = data.entries[i].url;
+      $diaryEntryForm.elements.notes.value = data.entries[i].notes;
+    }
+  }
 }
 
 $entryList.addEventListener('click', editEntry);
