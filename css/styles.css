@@ -83,12 +83,20 @@ ul {
   align-items: center;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .entries-header-item {
   flex-basis: 50%;
 }
 
 .nav-item {
   display: inline-block;
+}
+
+.margin-3rem {
+  margin-top: 3rem;
 }
 
 .entry-margin {

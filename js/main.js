@@ -43,6 +43,11 @@ function createEntry(entry) {
 var $diaryEntryForm = document.querySelector('#diary-entry-form');
 
 var $entryList = document.querySelector('#entry-list');
+var $noEntries = document.querySelector('#no-entries');
+
+if (data.entries.length !== 0) {
+  $noEntries.className = 'hidden';
+}
 
 function addNewEntry(event) {
   event.preventDefault();
@@ -67,6 +72,9 @@ function addNewEntry(event) {
 
   $entriesView.className = 'view';
   $formView.className = 'view hidden';
+  $noEntries.className = 'hidden';
+
+  data.view = 'entries';
 }
 
 $diaryEntryForm.addEventListener('submit', addNewEntry);
