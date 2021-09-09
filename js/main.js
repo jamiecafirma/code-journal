@@ -94,6 +94,14 @@ var $entriesLink = document.querySelector('#view-entries-link');
 var $entryFormLink = document.querySelector('#entry-form-link');
 var $views = document.querySelectorAll('.view');
 
+for (var v = 0; v < $views.length; v++) {
+  if ($views[v].getAttribute('data-view') === data.view) {
+    $views[v].className = 'view';
+  } else {
+    $views[v].className = 'view hidden';
+  }
+}
+
 function changeView(event) {
   var $dataView = event.target.getAttribute('data-view');
 
@@ -104,6 +112,7 @@ function changeView(event) {
       $views[v].className = 'view hidden';
     }
   }
+  data.view = $dataView;
 }
 
 $entriesLink.addEventListener('click', changeView);
