@@ -129,3 +129,12 @@ function viewButtonClicked(event) {
 
 $entriesLink.addEventListener('click', viewButtonClicked);
 $entryFormLink.addEventListener('click', viewButtonClicked);
+
+function editEntry(event) {
+  if (event.target.tagName !== 'I') {
+    return;
+  }
+  changeView('entry-form');
+}
+
+$entryList.addEventListener('click', editEntry);
