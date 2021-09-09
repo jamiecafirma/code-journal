@@ -10,7 +10,7 @@ function updateImage(event) {
 
 $photoUrl.addEventListener('input', updateImage);
 
-/* <li class="row entry-margin">
+/* <li class="row entry-margin" data-entry-id="entry-id">
   <div class="column-half">
     <img src="" alt="dummy entry 1" class="border-radius-4">
   </div>
@@ -26,6 +26,7 @@ $photoUrl.addEventListener('input', updateImage);
 function createEntry(entry) {
   var $journalEntry = document.createElement('li');
   $journalEntry.className = 'row entry-margin';
+  $journalEntry.setAttribute('data-entry-id', entry.entryId);
 
   var $imagePlaceholder = document.createElement('div');
   $imagePlaceholder.className = 'column-half';
