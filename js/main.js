@@ -44,10 +44,24 @@ var $diaryEntryForm = document.querySelector('#diary-entry-form');
 
 var $entryList = document.querySelector('#entry-list');
 var $noEntries = document.querySelector('#no-entries');
+var $views = document.querySelectorAll('.view');
 
 if (data.entries.length !== 0) {
   $noEntries.className = 'hidden';
 }
+
+function changeView(targetView) {
+  for (var v = 0; v < $views.length; v++) {
+    if ($views[v].getAttribute('data-view') === targetView) {
+      $views[v].className = 'view';
+    } else {
+      $views[v].className = 'view hidden';
+    }
+  }
+  data.view = targetView;
+}
+
+changeView(data.view);
 
 function addNewEntry(event) {
   event.preventDefault();
@@ -67,14 +81,8 @@ function addNewEntry(event) {
 
   $entryList.prepend(createEntry(formData));
 
-  var $entriesView = document.querySelector('#entries-view');
-  var $formView = document.querySelector('#form-view');
-
-  $entriesView.className = 'view';
-  $formView.className = 'view hidden';
   $noEntries.className = 'hidden';
-
-  data.view = 'entries';
+  changeView('entries');
 }
 
 $diaryEntryForm.addEventListener('submit', addNewEntry);
@@ -100,28 +108,12 @@ document.addEventListener('DOMContentLoaded', loadJournalEntries);
 
 var $entriesLink = document.querySelector('#view-entries-link');
 var $entryFormLink = document.querySelector('#entry-form-link');
-var $views = document.querySelectorAll('.view');
 
-for (var v = 0; v < $views.length; v++) {
-  if ($views[v].getAttribute('data-view') === data.view) {
-    $views[v].className = 'view';
-  } else {
-    $views[v].className = 'view hidden';
-  }
-}
-
-function changeView(event) {
+function viewButtonClicked(event) {
   var $dataView = event.target.getAttribute('data-view');
 
-  for (var v = 0; v < $views.length; v++) {
-    if ($views[v].getAttribute('data-view') === $dataView) {
-      $views[v].className = 'view';
-    } else {
-      $views[v].className = 'view hidden';
-    }
-  }
-  data.view = $dataView;
+  changeView($dataView);
 }
 
-$entriesLink.addEventListener('click', changeView);
-$entryFormLink.addEventListener('click', changeView);
+$entriesLink.addEventListener('click', viewButtonClicked);
+$entryFormLink.addEventListener('click', viewButtonClicked);
