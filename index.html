@@ -15,12 +15,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div data-view="modal" class="view hidden" id="modal-view">
+    <div class="black-bg justify-center align-center">
+      <div class="row pop-up border-radius-4">
+      <div class="column-full">
+        <h3 class="modal-message text-center modal-font">Are you sure you want to delete this entry?</h3>
+      </div>
+      <div class="flex-basis-half align-bottom">
+        <button class="modal-button border-radius-4 modal-font" id="cancel">CANCEL</button>
+      </div>
+      <div class="flex-basis-half justify-right align-bottom">
+        <button class="modal-button border-radius-4 modal-font" id="confirm">CONFIRM</button>
+      </div>
+      </div>
+    </div>
+  </div>
   <header>
     <div class="row purple-bg white-text">
       <div class="container column-full">
@@ -72,18 +87,23 @@
                 class="border-radius-4"></textarea>
               </label>
             </div>
-            <div class="column-full justify-right">
-              <button type="submit" class="purple-bg white-text border-radius-4">SAVE</button>
+            <div class="row full-width">
+              <div class="column-half flex-basis-half align-center" id="delete-button-container">
+                <a href="#" class="deleteButton hidden" id="delete-button">Delete Entry</a>
+              </div>
+              <div class="column-half flex-basis-half align-center justify-right">
+                <button type="submit" class="purple-bg white-text border-radius-4">SAVE</button>
+              </div>
             </div>
           </div>
         </form>
       </div>
       <div data-view="entries" class="view" id="entries-view">
         <div class="row entries-header-mg">
-          <div class="column-half entries-header-item align-center">
+          <div class="column-half flex-basis-half align-center">
             <h1 class="no-margin">Entries</h1>
           </div>
-          <div class="column-half entries-header-item align-center justify-right">
+          <div class="column-half flex-basis-half align-center justify-right">
             <a href="#" class="purple-bg white-text border-radius-4" id="entry-form-link" data-view="entry-form">NEW</a>
           </div>
         </div>
