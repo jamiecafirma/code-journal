@@ -15,12 +15,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div data-view="modal" class="view hidden" id="modal-view">
+    <div class="black-bg justify-center align-center">
+      <div class="row pop-up border-radius-4">
+      <div class="column-full">
+        <h3 class="modal-message text-center modal-font">Are you sure you want to delete this entry?</h3>
+      </div>
+      <div class="flex-basis-half align-bottom">
+        <button class="modal-button border-radius-4 modal-font" id="cancel">CANCEL</button>
+      </div>
+      <div class="flex-basis-half justify-right align-bottom">
+        <button class="modal-button border-radius-4 modal-font" id="confirm">CONFIRM</button>
+      </div>
+      </div>
+    </div>
+  </div>
   <header>
     <div class="row purple-bg white-text">
       <div class="container column-full">

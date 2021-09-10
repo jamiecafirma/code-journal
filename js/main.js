@@ -183,7 +183,18 @@ function editEntry(event) {
 
 $entryList.addEventListener('click', editEntry);
 
-function showModal(event) {
+var $formView = document.querySelector('#form-view');
+var $cancelButton = document.querySelector('#cancel');
+
+function toggleModal(event) {
+  if (event.target === $deleteButton) {
+    changeView('modal');
+    $formView.className = 'view';
+  } else if (event.target === $cancelButton) {
+    changeView('entry-form');
+  }
+
 }
 
-$deleteButton.addEventListener('click', showModal);
+$deleteButton.addEventListener('click', toggleModal);
+$cancelButton.addEventListener('click', toggleModal);
