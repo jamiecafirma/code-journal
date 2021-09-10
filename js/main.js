@@ -88,21 +88,34 @@ changeView(data.view);
 function addNewEntry(event) {
   event.preventDefault();
 
-  var formData = {};
+  if (data.editing !== null) {
+    var $entryID = parseInt(data.editing.getAttribute('data-entry-id'));
 
-  formData.title = $diaryEntryForm.title.value;
-  formData.url = $diaryEntryForm.url.value;
-  formData.notes = $diaryEntryForm.notes.value;
+    for (var i = 0; i < data.entries.length; i++) {
+      if ($entryID === data.entries[i].entryId) {
+        data.entries[i].title = $diaryEntryForm.elements.title.value;
+        data.entries[i].url = $diaryEntryForm.elements.url.value;
+        data.entries[i].notes = $diaryEntryForm.elements.notes.value;
+        $entryList.children[i].replaceWith(createEntry(data.entries[i]));
+        $formTitle.textContent = 'New Entry';
+      }
+    }
 
-  formData.entryId = data.nextEntryId;
-  data.nextEntryId++;
-  data.entries.unshift(formData);
+  } else {
+    var formData = {};
 
+    formData.title = $diaryEntryForm.title.value;
+    formData.url = $diaryEntryForm.url.value;
+    formData.notes = $diaryEntryForm.notes.value;
+
+    formData.entryId = data.nextEntryId;
+    data.nextEntryId++;
+    data.entries.unshift(formData);
+
+    $entryList.prepend(createEntry(formData));
+  }
   $photoPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
   $diaryEntryForm.reset();
-
-  $entryList.prepend(createEntry(formData));
-
   $noEntries.className = 'hidden';
   changeView('entries');
 }
@@ -124,17 +137,25 @@ var $entryFormLink = document.querySelector('#entry-form-link');
 function viewButtonClicked(event) {
   var $dataView = event.target.getAttribute('data-view');
 
+  if ($dataView === 'entry-form') {
+    $formTitle.textContent = 'New Entry';
+    $photoPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
+    $diaryEntryForm.reset();
+  }
   changeView($dataView);
 }
 
 $entriesLink.addEventListener('click', viewButtonClicked);
 $entryFormLink.addEventListener('click', viewButtonClicked);
 
+var $formTitle = document.querySelector('#form-title');
+
 function editEntry(event) {
   if (event.target.tagName !== 'I') {
     return;
   }
   changeView('entry-form');
+  $formTitle.textContent = 'Edit Entry';
   var $editedEntry = event.target.closest('li');
   data.editing = $editedEntry;
 
@@ -145,6 +166,7 @@ function editEntry(event) {
       $diaryEntryForm.elements.title.value = data.entries[i].title;
       $diaryEntryForm.elements.url.value = data.entries[i].url;
       $diaryEntryForm.elements.notes.value = data.entries[i].notes;
+      $photoPreview.setAttribute('src', data.entries[i].url);
     }
   }
 }
