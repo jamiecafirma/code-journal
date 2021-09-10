@@ -17,7 +17,7 @@ $photoUrl.addEventListener('input', updateImage);
   <div class="column-half">
   <div class="row font-26">
     <h2 class="image-title-style column-7-8"></h2>
-    <i class="fas fa-pen column-8 purple-color"></i>
+    <i class="fas fa-pen column-8 purple-color text-right"></i>
   </div>
     <p></p>
   </div>
@@ -52,7 +52,7 @@ function createEntry(entry) {
   $titleContainer.appendChild($entryTitle);
 
   var $editIcon = document.createElement('i');
-  $editIcon.className = 'fas fa-pen column-8 purple-color';
+  $editIcon.className = 'fas fa-pen column-8 purple-color text-right';
   $titleContainer.appendChild($editIcon);
 
   var $entryNotes = document.createElement('p');
@@ -98,6 +98,7 @@ function addNewEntry(event) {
         data.entries[i].notes = $diaryEntryForm.elements.notes.value;
         $entryList.children[i].replaceWith(createEntry(data.entries[i]));
         $formTitle.textContent = 'New Entry';
+        data.editing = null;
       }
     }
 
@@ -156,6 +157,7 @@ function editEntry(event) {
   }
   changeView('entry-form');
   $formTitle.textContent = 'Edit Entry';
+
   var $editedEntry = event.target.closest('li');
   data.editing = $editedEntry;
 

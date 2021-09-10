@@ -93,6 +93,10 @@ ul {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .entries-header-item {
   flex-basis: 50%;
 }
