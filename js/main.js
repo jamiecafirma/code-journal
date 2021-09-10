@@ -96,7 +96,7 @@ function addNewEntry(event) {
         data.entries[i].title = $diaryEntryForm.elements.title.value;
         data.entries[i].url = $diaryEntryForm.elements.url.value;
         data.entries[i].notes = $diaryEntryForm.elements.notes.value;
-        $entryList.children[i].replaceWith(createEntry(data.entries[i]));
+        data.editing.replaceWith(createEntry(data.entries[i]));
         $formTitle.textContent = 'New Entry';
         data.editing = null;
       }
