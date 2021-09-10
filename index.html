@@ -72,18 +72,23 @@
                 class="border-radius-4"></textarea>
               </label>
             </div>
-            <div class="column-full justify-right">
-              <button type="submit" class="purple-bg white-text border-radius-4">SAVE</button>
+            <div class="row full-width">
+              <div class="column-half flex-basis-half align-center" id="delete-button-container">
+                <a href="#" class="deleteButton hidden" id="delete-button">Delete Entry</a>
+              </div>
+              <div class="column-half flex-basis-half align-center justify-right">
+                <button type="submit" class="purple-bg white-text border-radius-4">SAVE</button>
+              </div>
             </div>
           </div>
         </form>
       </div>
       <div data-view="entries" class="view" id="entries-view">
         <div class="row entries-header-mg">
-          <div class="column-half entries-header-item align-center">
+          <div class="column-half flex-basis-half align-center">
             <h1 class="no-margin">Entries</h1>
           </div>
-          <div class="column-half entries-header-item align-center justify-right">
+          <div class="column-half flex-basis-half align-center justify-right">
             <a href="#" class="purple-bg white-text border-radius-4" id="entry-form-link" data-view="entry-form">NEW</a>
           </div>
         </div>

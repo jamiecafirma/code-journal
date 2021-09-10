@@ -139,6 +139,7 @@ function viewButtonClicked(event) {
   var $dataView = event.target.getAttribute('data-view');
 
   if ($dataView === 'entry-form') {
+    $deleteButton.className = 'deleteButton hidden';
     $formTitle.textContent = 'New Entry';
     $photoPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
     $diaryEntryForm.reset();
@@ -151,6 +152,11 @@ $entryFormLink.addEventListener('click', viewButtonClicked);
 
 var $formTitle = document.querySelector('#form-title');
 
+// delete button data model
+// <a href="#" class="deleteButton">Delete Entry</a>
+
+var $deleteButton = document.querySelector('#delete-button');
+
 function editEntry(event) {
   if (event.target.tagName !== 'I') {
     return;
@@ -160,6 +166,8 @@ function editEntry(event) {
 
   var $editedEntry = event.target.closest('li');
   data.editing = $editedEntry;
+
+  $deleteButton.className = 'deleteButton';
 
   var $entryID = parseInt(data.editing.getAttribute('data-entry-id'));
 
@@ -174,3 +182,8 @@ function editEntry(event) {
 }
 
 $entryList.addEventListener('click', editEntry);
+
+function showModal(event) {
+}
+
+$deleteButton.addEventListener('click', showModal);
