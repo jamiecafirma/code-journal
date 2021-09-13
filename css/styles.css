@@ -187,3 +187,18 @@ ul {
   background-color: #dc2626;
   color: white;
 }
+
+.search-bar {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  right: 8px;
+  top: 20px;
+  color: #b6b6b6;
+}
+
+.search-icon:hover {
+  color: #562b81;
+}

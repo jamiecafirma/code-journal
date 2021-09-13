@@ -18,6 +18,14 @@
   width: 100%;
 }
 
+.column-two-thirds {
+  width: calc(200% / 3);
+}
+
+.column-third {
+  width: calc(100% / 3);
+}
+
 .column-8 {
   width: 12.5%;
 }
@@ -31,6 +39,15 @@ img {
   height: 250px;
   object-fit: cover;
   margin-bottom: 0.8rem;
+}
+
+.search-input {
+  width: 100px;
+  margin: 0;
+  border-radius: 20px;
+  padding-left: 1rem;
+  padding-right: 1.5rem;
+  outline: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -49,5 +66,9 @@ img {
 
   img {
     height: auto;
+  }
+
+  .search-input {
+    width: 200px;
   }
 }
