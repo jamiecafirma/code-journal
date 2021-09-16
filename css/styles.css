@@ -199,6 +199,11 @@ ul {
   color: #b6b6b6;
 }
 
+.main-search-icon {
+  right: 20px;
+  top: 16px;
+}
+
 .search-icon:hover {
   color: #562b81;
 }

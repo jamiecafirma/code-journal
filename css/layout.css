@@ -50,6 +50,12 @@ img {
   outline: none;
 }
 
+.main-search-input {
+  height: 3rem;
+  padding-left: 1rem;
+  padding-right: 3rem;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
@@ -70,5 +76,9 @@ img {
 
   .search-input {
     width: 200px;
+  }
+
+  .main-search-input {
+    padding-right: 1.5rem;
   }
 }
